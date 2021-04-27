@@ -4,6 +4,110 @@
     box-sizing: border-box;
 }
 body {
-    background: aliceblue;
     font-family: 'Roboto', sans-serif;
+}
+button {
+    font-family: 'Roboto', sans-serif;
+}
+path, i, svg {
+    pointer-events: none;
+}
+
+.colors{
+    min-height: 80vh;
+    display: flex;
+    color: rgb(218, 218, 218);
+
+    h2 {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .color {
+        height:80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+
+        .adjust,.lock {
+           border: none; 
+           background: none;
+           cursor: pointer;
+           margin: 2rem;
+           font-size: 1.6rem;
+        }
+        .controls{
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .sliders {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            pointer-events: none;
+            bottom: 0;
+            background: rgb(255, 255, 255);
+            padding: 1rem;
+            width: 60%;
+            border-radius: 3px;
+            // transform: translateY(100px);
+            transition: all 0.5 ease-in-out;
+
+            &.active {
+                opacity: 1;
+                transform: translateY(0px);
+                pointer-events: all;
+            }
+
+            button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0.3rem 0.5rem;
+                border: none;
+                border-radius: 3px;
+                background: #fff;
+                color: rgb(14, 14, 14);
+                cursor: pointer;
+                font-size: 1.4rem;
+            }
+        }
+        
+    }
+    
+}
+
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 20vh;
+
+    button {
+        font-size: 1.2rem;
+        margin: 1rem;
+        padding: 1rem 1.5rem;
+        border: none;
+        color: #fff;
+        background: #333;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+}
+
+.library,.save,.generate {
+    &-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
