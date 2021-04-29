@@ -85,6 +85,9 @@ path, i, svg {
   padding: 1rem;
   width: 70%;
   border-radius: 3px;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
   -webkit-transition: all 0.5 ease-in-out;
   transition: all 0.5 ease-in-out;
 }
