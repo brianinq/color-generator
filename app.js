@@ -3,6 +3,7 @@ const genBtn = document.querySelector('.generate')
 const sliders = document.querySelectorAll('input[type="range"')
 const currentHexes = document.querySelectorAll('.color h2')
 let initialColors;
+const locks = document.querySelectorAll('.lock')
 const popup = document.querySelector('.copy-container')
 const adjustBtn = document.querySelectorAll('.adjust')
 const closeAdjustment = document.querySelectorAll('.close-adjustment')
@@ -37,7 +38,15 @@ closeAdjustment.forEach((btn, index) => {
         closePanel(index);
     })
 })
+genBtn.addEventListener('click', randomColors)
 
+locks.forEach((lock, index) => {
+    lock.addEventListener('click', () => {
+        colorDivs[index].classList.add('locked')
+        lock.children[0].classList.toggle('fa-lock-open')
+        lock.children[0].classList.toggle('fa-lock')
+    })
+});
 
 
 function genHex() {
@@ -56,9 +65,16 @@ function randomColors() {
     initialColors = []
     colorDivs.forEach((div, index) => {
         const hexText = div.children[0];
+
         const randomColor = genHex();
         const icons = div.querySelectorAll('.controls button')
-        initialColors.push(chroma(randomColor).hex())
+        //lock color
+        if (div.classList.contains('locked')) {
+            initialColors.push(hexText.innerText)
+            return
+        } else {
+            initialColors.push(chroma(randomColor).hex())
+        }
         div.style.backgroundColor = randomColor;
         hexText.innerText = randomColor;
 
