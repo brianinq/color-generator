@@ -213,8 +213,8 @@ input[type="range"] {
 .copy-container .popup.active {
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  -webkit-animation: anime .5s;
-          animation: anime .5s;
+  -webkit-animation: anime 0.8s;
+          animation: anime 0.8s;
 }
 
 .copy-container.active {

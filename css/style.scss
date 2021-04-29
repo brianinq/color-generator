@@ -154,7 +154,7 @@ input[type="range"] {
         }
         &.active {
             transform: translateY(0); 
-            animation: anime .5s;           
+            animation: anime 0.8s;           
         }
     }
 }
