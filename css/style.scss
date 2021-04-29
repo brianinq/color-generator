@@ -122,3 +122,55 @@ input[type="range"] {
     cursor: pointer;
     pointer-events: all;
 }
+
+.copy-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+
+    .popup {
+        display: flex;
+        background: rgb(255, 255, 255);
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        border-radius: 10px;
+        transition: transfrorm 0.4s;
+        transform: translateY(-2rem);
+        
+        min-width: 30%;
+        min-height: 30vh;
+
+        h4 {
+            font-size: 2rem;
+        }
+        &.active {
+            transform: translateY(0); 
+            animation: anime .5s;           
+        }
+    }
+}
+
+.copy-container.active {
+    pointer-events: all;
+    opacity: 1;
+    color: #000;
+    
+}
+
+@keyframes anime {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
+}
