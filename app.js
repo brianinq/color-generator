@@ -3,6 +3,7 @@ const genBtn = document.querySelector('.generate')
 const sliders = document.querySelectorAll('input[type="range"')
 const currentHexes = document.querySelectorAll('.color h2')
 let initialColors;
+const popup = document.querySelector('.copy-container')
 
 //listeners
 
@@ -14,6 +15,15 @@ colorDivs.forEach((slider, index) => {
         updateText(index)
     })
 })
+currentHexes.forEach((hex) => {
+    hex.addEventListener('click', () => {
+        copyToClipboard(hex)
+    })
+})
+popup.addEventListener('animationend', () => {
+    popup.classList.remove('active')
+    popup.children[0].classList.remove('active')
+});
 
 
 
@@ -144,5 +154,19 @@ function resetInputs() {
     })
 }
 
+
+function copyToClipboard(hex) {
+    const element = document.createElement('textarea')
+    element.value = hex.innerText;
+    document.body.appendChild(element);
+    element.select();
+    document.execCommand('copy');
+    document.body.removeChild(element)
+
+    //pop up
+    const popupBox = popup.children[0]
+    popup.classList.add('active')
+    popupBox.classList.add('active')
+}
 
 randomColors()
