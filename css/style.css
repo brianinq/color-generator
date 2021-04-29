@@ -150,10 +150,15 @@ path, i, svg {
           align-items: center;
 }
 
-input[type='range'] {
+input[type="range"] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  pointer-events: all;
 }
 /*# sourceMappingURL=style.css.map */

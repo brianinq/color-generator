@@ -113,7 +113,12 @@ path, i, svg {
     }
 }
 
-input[type='range'] {
+input[type="range"] {
     appearance: none;
     margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    pointer-events: all;
 }
