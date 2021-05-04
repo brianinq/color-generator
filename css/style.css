@@ -232,7 +232,7 @@ input[type="range"] {
   padding: 0.5rem;
 }
 
-.close-save {
+.close {
   position: absolute;
   top: 0;
   right: 0;
@@ -257,9 +257,66 @@ input[type="range"] {
 }
 
 .save-name {
-  border-radius: 5px;
   font-size: 1.2rem;
   border: solid #080306;
+}
+
+.library-container .popup {
+  border-radius: 0%;
+  min-width: 40%;
+  overflow-y: scroll;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 1rem;
+  max-height: 50%;
+}
+
+.custom-palette {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  padding: 1rem;
+}
+
+.custom-palette h4 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.small-preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.small-preview div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 3rem;
+}
+
+.pick-palette-btn {
+  height: 3rem;
+  border: none;
+  padding: .5rem;
+  margin: .5rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #fff;
+  background: #111010;
 }
 
 @-webkit-keyframes anime {
